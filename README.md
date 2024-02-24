@@ -24,3 +24,4 @@ https://www.ecured.cu/images/8/81/Jude-milhon.jpg
 https://www.lasinnovadoras.com/resenas/rozsa-peter-la-madre-fundadora-teoria-recursividad-n412
 
 url img https://statics.lasinnovadoras.com/2022/03/crop/622f8af4cfbea__800x578.png
+
