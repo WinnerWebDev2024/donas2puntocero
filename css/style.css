@@ -10,31 +10,51 @@
     --color-bg-form:        #736c48;
     --color-primary:        #736451;
     --color-securdary:      #f2f2f2;
+    --font-primary:         'Poppins', sans-serif;
+    --font-secondary:       'Open Sans', sans-serif;
+    --font-tertiary:        'Merriweather Sans', sans-serif;
 }
 body{
     width: 100vw;
+    max-width: 2560px;
     height: auto;
     background-color: var(--color-bg-body);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "cabecera"
+    "menu"
+    "cuerpo"
+    "pie";
 }
 header{
+    height: 50vh;
     font-size: .5rem;
+    grid-area: cabecera;
     color: var(--color-securdary);
     background-color: var(--color-bg-fo-he);
-    display: flex;
-    justify-content: center;
+    padding: 40px 0;
+}
+.container{
+    width: 90%;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
     align-items: center;
-    background: linear-gradient(rgba(5, 7, 12, 0.75),rgba(5, 7, 12, 0.75)), url(../img/header.jpg)no-repeat  center  center fixed;
+    gap: 1em;
+}
+.slider__elements{
+    /* background-image:url(../img/header.jpg); */
+    background-repeat: no-repeat;
     background-size: cover;
 
 }
-h1{
-    font-size: 2.5rem;
-    text-align: center;
-}
 nav{
+    grid-area: menu;
     color: var(--color-securdary);
     background-color: var(--color-primary);
     border-bottom:  1px  solid var(--color-bg-form);
@@ -55,11 +75,11 @@ article{
     justify-content: center;
 }
 article figure{
-    width: 90%;
+    width: 100%;
 }
 article figure img{
     width: 100%;
-    height: auto;
+    height: 100%;
     border: 1px solid var(--color-bg-body);
     border-radius: 50%;
 }
@@ -67,13 +87,6 @@ article figure figcaption{
     text-align: center;
 }
 footer{
-    background: linear-gradient(rgba(5, 7, 12, 0.75),rgba(5, 7, 12, 0.75)), url(../img/header.jpg)no-repeat  center  center fixed;
-    background-size: cover;
-}
-
-
-@media only screen and (min-width: 1024px){
-    article figure{
-        width: 30%;
-    }
+    grid-area: pie;
+    background-color: var(--color-bg-fo-he);
 }
