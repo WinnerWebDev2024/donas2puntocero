@@ -16,23 +16,22 @@
 <body>
     <body>
 
-        <header>
+        <header>            
             <nav>
                 <!-- Icono -->
                 <div class="icono" id="icono">
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <!-- Menú de navegación -->
-                <ul class="enlaces close" id="enlaces">
-                    <li><a href="" id="activo">Inicio</a></li>
-                    <li><a href="">Acerca de</a></li>
-                    <li><a href="">Contacto</a></li>
-                </ul>
+                    <ul class="enlaces close" id="enlaces">
+                        <li><a href="" id="activo">Inicio</a></li>
+                        <li><a href="">Acerca de</a></li>
+                        <li><a href="">Contacto</a></li>
+                    </ul>
             </nav>
-
             <section class="slider">
                     <div class="slider__container container">
-                        <img src="img/bx-chevron-left.svg" class="slider__arrow" id="before">
+                        <img src="img/bx-chevron-left.svg" alt="bx-chevron-left" class="slider__arrow" id="before">
             
                         <section class="slider__body slider__body--show" data-id="1">
                             <div class="slider__texts">
@@ -41,10 +40,9 @@
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed atque officiis totam modi, non
                                     maiores.
                                 </p>
-                            </div>
-            
+                            </div>           
                             <figure class="slider__picture">
-                                <img src="img/img1-04.jpg" class="slider__img">
+                                <img src="img/img1-04.jpg" alt="img1-04" class="slider__img">
                             </figure>
                         </section>
             
@@ -57,7 +55,7 @@
                             </div>
             
                             <figure class="slider__picture">
-                                <img src="img/img2-03.jpg" class="slider__img">
+                                <img src="img/img2-03.jpg" alt="img2-03" class="slider__img">
                             </figure>
                         </section>
             
@@ -70,7 +68,7 @@
                             </div>
             
                             <figure class="slider__picture">
-                                <img src="img/img3-02.jpg" class="slider__img">
+                                <img src="img/img3-02.jpg" alt="img3-02" class="slider__img">
                             </figure>
                         </section>
             
@@ -83,10 +81,10 @@
                             </div>
             
                             <figure class="slider__picture">
-                                <img src="img/img4-04.jpg" class="slider__img">
+                                <img src="img/img4-04.jpg" alt="img4-04" class="slider__img">
                             </figure>
                         </section>
-                        <section class="slider__body" data-id="4">
+                        <section class="slider__body" data-id="5">
                             <div class="slider__texts">
                                 <h2 class="subtitle">¡Hola! Mi nombre es Pablo Gonzales 4</h2>
                                 <p class="slider__review">
@@ -95,10 +93,10 @@
                             </div>
             
                             <figure class="slider__picture">
-                                <img src="img/img5-01.jpg" class="slider__img">
+                                <img src="img/img5-01.jpg" alt="img5-01" class="slider__img">
                             </figure>
                         </section>
-                        <section class="slider__body" data-id="4">
+                        <section class="slider__body" data-id="6">
                             <div class="slider__texts">
                                 <h2 class="subtitle">¡Hola! Mi nombre es Pablo Gonzales 4</h2>
                                 <p class="slider__review">
@@ -107,10 +105,10 @@
                             </div>
             
                             <figure class="slider__picture">
-                                <img src="img/img6-01.jpg" class="slider__img">
+                                <img src="img/img6-01.jpg" alt="img6-01" class="slider__img">
                             </figure>
                         </section>
-                        <section class="slider__body" data-id="4">
+                        <section class="slider__body" data-id="7">
                             <div class="slider__texts">
                                 <h2 class="subtitle">¡Hola! Mi nombre es Pablo Gonzales 4</h2>
                                 <p class="slider__review">
@@ -119,45 +117,79 @@
                             </div>
             
                             <figure class="slider__picture">
-                                <img src="img/img7-01.jpg" class="slider__img">
+                                <img src="img/img7-01.jpg" alt="img7-01" class="slider__img">
                             </figure>
                         </section>
             
                         <img src="img/bx-chevron-right.svg" class="slider__arrow" id="next">
                     </div>
+            </section>
         </header>
     
         <!-- Contenido Principal -->
         <main>
             <!-- Contenico -->
+            <img src="img/img2-03.jpg" alt="img2-03">
+            <img src="img/img2-03.jpg" alt="img2-03">
+
+            <h2>Formulario de Registro</h2>
+    <form action="#" method="post" name="formulario" id="formulario">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <ul>
+                <li>
+                    <label for="nombre">Nombre y Apellidos</label><span></span>
+                    <input type="text" name="nombre" id="nombre" class="campo_no_validado" maxlength="120">
+                </li>
+                <li>
+                    <label for="correo">Correo Electrónico</label><span></span>
+                    <input type="email" name="correo" id="correo" class="campo_no_validado">
+                </li>
+                <li>
+                    <label for="telefono">Teléfono</label><span></span>
+                    <input type="tel" name="telefono" id="telefono" class="campo_no_validado" placeholder="xxx-xxx-xxx">
+                </li>
+                <li>
+                    <input type="checkbox" name="condiciones" id="condiciones" value="acepta">
+                    <label for="condiciones">Acepta las condiciones de nuestra <a href="#" id="abrir">Politica de privacidad</a></label>
+                    <span id="politicaError" class="noError"></span>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="Enviar Formulario">
+            <p class="mensaje-p"></p>
+        </fieldset>
+    </form>
+
+
         </main>
        
         <!-- Pie de página -->
         <footer>
-            <div class="rrss">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"> <i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-
-            <div class="nav-footer" >
-                    <a href="">Home</a>
-                    <a href="">About Me</a>
-                    <a href="">Skills</a>
-                    <a href="">PortFolio</a>
-                    <a href="">Contact Me</a>
-            </div>
-
             <div class="copy">
-                <p >&copy; Jaime Ivan Rodriguez Morales</p> 
-                <P>CIFO: BARCELONA, La Violeta</P> 
-                <P>Curs Confecció i Publicació de Pàgines Web</p>
+                <p >&copy;Raquel Martínez Matarredona, Jaime Ivan Rodriguez Morales</p> 
+                <P>CIFO: BARCELONA, La Violeta | Curs Confecció i Publicació de Pàgines Web</p>
             </div>
-
+             <ul class="rrss">
+                <li>
+                    <i class="fab fa-facebook"></i>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fab fa-linkedin"></i>
+                </li>
+                <li>
+                    <i class="fab fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fab fa-youtube"></i>
+                </li>
+            </ul>
+           
         </footer>
-    
         <!-- Scripts -->
         <script src="js/scripts.js"></script>
 </body>

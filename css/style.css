@@ -24,36 +24,24 @@ body{
     color: var(--color-bg-body);
     display: grid;
     grid-auto-columns: auto;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
+    margin: auto;
+    max-width: 1440px;
 }
-
 
 /* Estilos para la cebezera y el menú de navegación principal */
 header{
-    flex: 0 0 40vh;
+    display: grid;
     width: 100%;
     background-color: var(--color-bg-he-fo);
-    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
 }
-
-
-.icono{
-    display: none;
-}
-
 header nav{
-    height: 5vh;
     background-color: var(--color-bg-he-fo);
     display: flex;
     justify-content: end;
     align-items: center;
-}
-
-header nav ul{
-    width: 30%;
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 nav ul li a{
@@ -67,6 +55,9 @@ nav ul li a{
 
 header nav ul a:hover, #active{
     border-color: var(--color-securdary);
+} 
+#icono{
+    display: none;
 }
 
 /* Estilos de los Sliders */
@@ -125,8 +116,8 @@ header nav ul a:hover, #active{
 }
 
 .slider__img{
-    width: 530px;
-    height: 530px;
+    width: 330px;
+    height: 330px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -148,45 +139,118 @@ main{
     background-color: var(--color-bg-body);
 
 }
+/* estilos del formulario */
+form{
+    width: 100%;
+    margin: 50px auto;
+    padding: 2rem;
+}
 
+fieldset{
+    border: 2px double #333;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+fieldset:nth-child(2){
+    border: 0
+}
+
+legend{
+    padding: 0 1rem;
+    font: 1.5rem;
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+ul{
+    list-style: none;
+}
+
+input:not(input[type="submit"]){
+    display: block;
+    margin: 1rem 0;
+    width: 95%;
+    font: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 5px;
+}
+
+.error{
+    color: #ff0000;
+}
 
 /* Estilos para footer */
-footer{
-    flex: 0 0 auto;
-    padding: 2rem;
-    width: 100%;
-    background-color: var(--color-bg-he-fo);
-    display: flex;
-    align-items: center;
+footer {
+    background: var(--color-bg-he-fo);
+    padding: 0 2em;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 70% 30%;
+    align-content: center;
 }
+.rrss {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-size: 1.5rem;
+}
+.rrss li{
+    margin: 1.5rem;
+}
+
+.fab {
+    font-size: 1.2em;
+    color: var(--bg-boxes-buton-secundary);
+}
+.copy{
+    display: flex;
+    flex-direction: column;
+}
+.copy p{
+    text-align: center;
+    font-size: 1.5rem;
+    /* border-bottom: 1px solid var(--bg-boxes-buton-secundary); */
+} 
 
 /* MEDIA QUERIES */
  @media only screen and (max-width: 768px){
-    .slider{
-        height: 400px;
+    
+   /* medias para los sliders */
+    .slider__body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 1em;
     }
-    footer{
-        flex-direction: column;
-    }
-    footer h3{
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-    }
-    footer p{
-        font-size: 0.8rem;
-        margin-top: 1rem;
+    .slider__picture{
+        grid-row: 1/2;
     }
 
-    .icono{
+    .slider__img{   
+        width: 210px;
+        height: 210px;
+    }
+    #icono{
         display: flex;
         font-size: 2rem;
         margin-right: 2rem;
         z-index: 2; 
     }
-    .icono i:hover{
+    #icono i:hover{
         cursor: pointer;
     }
     .enlaces{
+        width: 30%;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
         height: 100vh;
         width: 100vw;
         position: fixed;
@@ -199,12 +263,56 @@ footer{
         background: rgb(115,100,81); 
         background: linear-gradient(90deg, rgba(115,100,81, 1) 0%, rgba(217,129,98, 1) 50%, rgba(217,129,98,1) 100%);
     }
-
     .close{
         clip-path: circle(0% at 100% 0%);
     }
     .open{
         clip-path: circle(150% at 100% 0%);
     }
+ }
+    @media (max-width:425px){
 
-} 
+        .slider__container{
+            grid-template-columns: 25px 1fr 25px;
+        }
+    
+        .slider__arrow{
+           width: 100%;
+        }
+    
+        .slider__img{   
+            width: 180px;
+            height: 180px;
+        }
+    
+        .subtitle{
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+    
+        .slider__review{
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+
+@media (min-width:769px){
+    /* orden del grid del header */
+
+    header .slider{
+        grid-row: 1;
+    }
+    nav{
+        grid-row: 2;
+        flex-direction: row;
+    }
+    #enlaces{
+
+        width: 100%;
+        list-style: none;
+        display: flex;
+        z-index: 10;
+        justify-content: space-evenly;
+        /* flex-direction: row; */
+    }
+}
