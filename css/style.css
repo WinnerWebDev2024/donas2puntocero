@@ -38,14 +38,15 @@ header{
     grid-template-rows: repeat(2, auto);
 }
 header nav{
-    background-color: var(--color-bg-he-fo);
+    background-color: var(--color-bg-form);
     display: flex;
     justify-content: end;
     align-items: center;
 }
 
 nav ul li a{
-    color: var(--color-primary);
+    
+    color: var(--color-bg-body);
     text-decoration: none;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
@@ -135,10 +136,32 @@ header nav ul a:hover, #active{
 
 /* Estilos para el contenido principal */
 main{
-    flex: 1 0 auto;
+    padding: 0 2rem;
     background-color: var(--color-bg-body);
-
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+    color: var(--color-primary);
 }
+main figure{
+    width: 350px;
+    height: auto;
+    margin: 0 2rem;
+}
+main figure img{
+    width: 100%;
+    height: auto;
+}
+main section{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-row: auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
 /* estilos del formulario */
 form{
     width: 100%;
@@ -222,7 +245,7 @@ footer {
 
 /* MEDIA QUERIES */
  @media only screen and (max-width: 768px){
-    
+
    /* medias para los sliders */
     .slider__body{
         grid-template-columns: 1fr;
@@ -298,7 +321,10 @@ footer {
 
 @media (min-width:769px){
     /* orden del grid del header */
+    #enlaces li{
+        padding: 2rem 0;
 
+    }
     header .slider{
         grid-row: 1;
     }
@@ -307,12 +333,10 @@ footer {
         flex-direction: row;
     }
     #enlaces{
-
         width: 100%;
         list-style: none;
         display: flex;
         z-index: 10;
         justify-content: space-evenly;
-        /* flex-direction: row; */
     }
 }
