@@ -5,7 +5,7 @@
 }
 :root{
     --font-size-primary:    18px;
-    --color-bg-fo-he:       #d98162;
+    --color-bg-he-fo:       #d98162;
     --color-bg-body:        #d9ceb0;
     --color-bg-form:        #736c48;
     --color-primary:        #736451;
@@ -14,17 +14,197 @@
     --font-secondary:       'Open Sans', sans-serif;
     --font-tertiary:        'Merriweather Sans', sans-serif;
 }
+
 body{
-    width: 100vw;
-    max-width: 2560px;
-    height: auto;
-    background-color: var(--color-bg-body);
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: inherit;
+    font-size: var(--font-size-primary);
+    font-family: var(--font-primary);
+    color: var(--color-bg-body);
     display: grid;
-    grid-template-columns: 1fr;
+    grid-auto-columns: auto;
     grid-template-rows: repeat(4, auto);
-    grid-template-areas: 
-    "cabecera"
-    "menu"
-    "cuerpo"
-    "pie";
 }
+
+
+/* Estilos para la cebezera y el menú de navegación principal */
+header{
+    flex: 0 0 40vh;
+    width: 100%;
+    background-color: var(--color-bg-he-fo);
+    position: relative;
+}
+
+
+.icono{
+    display: none;
+}
+
+header nav{
+    height: 5vh;
+    background-color: var(--color-bg-he-fo);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header nav ul{
+    width: 30%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li a{
+    color: var(--color-primary);
+    text-decoration: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    padding: 4px 0;
+    transition: .7s ease-out;
+}
+
+header nav ul a:hover, #active{
+    border-color: var(--color-securdary);
+}
+
+/* Estilos de los Sliders */
+.container{
+    width: 90%;
+    min-height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider{
+    background-color: var(--color-bg-he-fo);
+    padding: 40px 0;
+    
+}
+
+.slider__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 1em;
+    height: 100%h;
+}
+
+.slider__body{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    background-color:var(--color-bg-he-fo);
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition: opacity 1.5s;
+}
+
+.slider__body--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.slider__texts{
+    max-width: 600px;
+}
+
+.subtitle{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.slider__review{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.slider__img{
+    width: 530px;
+    height: 530px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider__arrow{
+    cursor: pointer;
+    width: 90%;
+}
+
+.slider__arrow:nth-of-type(2){
+    justify-self: end;
+}
+
+/* Estilos para el contenido principal */
+main{
+    flex: 1 0 auto;
+    background-color: var(--color-bg-body);
+
+}
+
+
+/* Estilos para footer */
+footer{
+    flex: 0 0 auto;
+    padding: 2rem;
+    width: 100%;
+    background-color: var(--color-bg-he-fo);
+    display: flex;
+    align-items: center;
+}
+
+/* MEDIA QUERIES */
+ @media only screen and (max-width: 768px){
+    .slider{
+        height: 400px;
+    }
+    footer{
+        flex-direction: column;
+    }
+    footer h3{
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    footer p{
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .icono{
+        display: flex;
+        font-size: 2rem;
+        margin-right: 2rem;
+        z-index: 2; 
+    }
+    .icono i:hover{
+        cursor: pointer;
+    }
+    .enlaces{
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        transition: all 1.5s ease;
+        background: rgb(115,100,81); 
+        background: linear-gradient(90deg, rgba(115,100,81, 1) 0%, rgba(217,129,98, 1) 50%, rgba(217,129,98,1) 100%);
+    }
+
+    .close{
+        clip-path: circle(0% at 100% 0%);
+    }
+    .open{
+        clip-path: circle(150% at 100% 0%);
+    }
+
+} 
